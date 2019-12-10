@@ -58,4 +58,32 @@ li {
 a {
   color: #42b983;
 }
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 300px;
+}
+input {
+  padding: 12px 24px;
+  background-color: #efefef;
+  margin: 2px;
+  font-size: 14px;
+  display: block;
+  width: 100%;
+}
+button {
+  padding: 12px 24px;
+  background-color: #42b983;
+  margin: 2px;
+  font-size: 16px;
+  font-weight: 600;
+  width: 100%;
+  color: white;
+}
 </style>
