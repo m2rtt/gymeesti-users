@@ -2,10 +2,10 @@
 
 $type = $_REQUEST["type"];
 $token = $_REQUEST["token"];
-$clubId = $_REQUEST["clubId"];
 
 $curl = curl_init();
 if ($type == "users") {
+  $clubId = $_REQUEST["clubId"];
   $url = "https://gymestonia.perfectgym.com/Api/Clubs/WhoIsIn?clubId=".$clubId;
 } else if ($type == "gyms") {
   $url = "https://gymestonia.perfectgym.com/Api/Clubs/Clubs";

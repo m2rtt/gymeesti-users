@@ -14,7 +14,7 @@
 </template>
 
 <script>
-const API = '/api.php';
+const API = '/gym/api.php';
 
 export default {
   name: 'gyms',
