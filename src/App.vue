@@ -17,19 +17,36 @@ export default {
   },
   data: function() {
     return {
-      loggedIn: !!localStorage.getItem('tok')
+      loggedIn: this.checkLoggedStatus()
     }
   },
+  methods: {
+    checkLoggedStatus() {
+      const token = localStorage.getItem('tok');
+      const expTime = localStorage.getItem('exp');
+      const authTime = localStorage.getItem('authtime');
+      if (!token || !expTime || !authTime) {
+        return false;
+      }
+      const currentTime = new Date().getTime();
+      return (currentTime - parseInt(authTime)) < parseInt(expTime);
+    }
+  }
 }
 </script>
 
 <style>
+body {
+  margin: 0;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: #46555E;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  padding: 0 12px;
 }
 </style>
